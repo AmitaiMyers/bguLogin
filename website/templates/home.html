@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="center-content">
+    <div>
+        <br>
+    </div>
+    <div class="col-md-6"
+         style="margin-top: 20px width: 40%; max-width: 500px; border: 1px solid #d1d1d1; padding: 15px 18px; background-color: #e6e6e6; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); font-family: Arial, sans-serif;">
+        <form method="POST" action="{% url 'home' %}">
+            {% csrf_token %}
+            <div class="mb-3" style="position: relative;">
+                <label for="exampleInputuserName" class="form-label"
+                       style="margin-bottom: 0px;text-align: right; display: block; padding-right: 10px; font-size: 18px; color: #333333; font-weight: bold;">
+                    <span class="required" style="color: red;">*</span>שם משתמש</label>
+                <input type="text" class="form-control" name="user_name" id="exampleInputuserName"
+                       style="border: 1px solid #d1d1d1; border-radius: 0; font-size: 16px; padding: 12px;" required>
+            </div>
+            <div class="mb-3" style="position: relative;">
+                <label for="exampleInputPassword1" class="form-label"
+                       style="margin-bottom: 0px;text-align: right; display: block; padding-right: 10px; font-size: 18px; color: #333333; font-weight: bold;"><span
+                        class="required" style="color: red;">*</span>סיסמה</label>
+                <input type="password" class="form-control" name="password" id="exampleInputPassword1" required
+                       style="border: 1px solid #d1d1d1; border-radius: 0; font-size: 16px;padding: 12px;">
+            </div>
+            <div class="mb-3" style="position: relative;">
+                <label for="exampleInputID" class="form-label"
+                       style="margin-bottom: 0px;text-align: right; display: block; padding-right: 10px; font-size: 18px; color: #333333; font-weight: bold;"><span
+                        class="required" style="color: red;">*</span>מספר זהות</label>
+                <input type="text" class="form-control" name="idNumber" id="exampleInputID" required
+                       style="border: 1px solid #d1d1d1; border-radius: 0; font-size: 16px;padding: 12px;">
+            </div>
+
+            <button type="submit" class="btn btn-primary"
+                    style="width: 100%; background-color: #0F52BA; color: black; border: none; border-radius: 0; font-size: 20px; font-weight: bold; padding: 12px;">
+                כניסה למערכת
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
